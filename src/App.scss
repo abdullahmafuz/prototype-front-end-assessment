@@ -2,5 +2,11 @@
 
 *{
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+@import '../src/style/var';
+@import '../src/style/function';
+
+@import '../src/style/login';

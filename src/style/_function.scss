@@ -1,0 +1,13 @@
+
+@mixin container($width,$height) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: auto;
+    width: $width;
+    height: $height;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+}
+

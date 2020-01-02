@@ -1,0 +1,194 @@
+
+
+
+.login-container{
+
+
+    @include container(100%,100vh);
+
+   
+    img{
+        position: absolute;
+        top:20%;
+        left: 35%;
+         width: 30%;
+         height: 15%;
+        
+     }
+    
+    .box{
+        
+        
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.89);
+        border-radius:3px;
+        padding:70px 80px;
+        width: 16%;
+       
+        box-shadow: 0 0 10px 3px $primaryYellow;
+
+        .text-center{
+            color:$primaryYellow;	
+            text-transform:uppercase;
+            font-size: 20px;
+            margin: -20px 0 100px 0;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .input-container{
+            position:relative;
+            margin-bottom:25px;
+            
+        
+            label{
+                position:absolute;
+                top:0px;
+                left:-20px;
+                font-size:16px;
+                color:$primaryYellow;	
+               
+                transition: all 0.3s ease-in-out;
+            }
+
+
+
+            input{ 
+                border:0;
+                border-bottom:1px solid #555;  
+                background:transparent;
+                width:110%;
+                padding:8px 0 5px 0;
+                font-size:16px;
+                color:$primaryYellow;
+                margin-left: -20px;
+               
+                &:focus{ 
+                    border:none;	
+                    outline:none;
+                    border-bottom:1px solid $primaryYellow;	
+                   ~ label{
+                        top:-12px;
+                        font-size:12px;
+                        
+                    }
+                
+
+                   }
+              }
+
+             
+             
+        }
+
+        
+     
+        .btn{
+            
+            background-color:$primaryYellow;
+            outline: none;
+            border: 0;
+            color: #000;
+            font-weight: bold;
+            padding:10px 20px;
+            text-transform:uppercase;
+            margin-top:50px;
+            border-radius:2px;
+            cursor:pointer;
+            position:relative;
+            
+            &:hover{
+                background-color: $hoverYellow;
+            }
+        }
+        
+        
+    }
+
+}
+
+.inputactive{
+    
+    top:-12px !important;
+    font-size:12px !important;
+                
+}
+
+
+@media only screen and (max-width: 900px) {
+
+
+    
+    
+.login-container{
+
+    
+    .box{
+        width: 35%;
+        .text-center{
+           
+            font-size: 15px;
+           
+        }
+        
+        .input-container{
+           
+        
+            label{
+                
+                font-size:12px;
+               
+            }
+
+        }
+       
+     
+    
+        
+        
+    }
+
+}
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    
+    .login-container{
+    
+        
+        .box{
+            width: 50%;
+            .text-center{
+               
+                font-size: 15px;
+               
+            }
+            
+            .input-container{
+               
+            
+                label{
+                    
+                    font-size:12px;
+                   
+                }
+    
+            }
+           
+         
+        
+            
+            
+        }
+    
+    }
+    }
+    
+    
