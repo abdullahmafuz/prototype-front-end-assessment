@@ -2,15 +2,16 @@ import React,{useState} from 'react'
 
 import starWarsLogo from '../../img/Star_Wars_Logo.svg'
 
-const Login = () => {
 
-
+const Register = () => {
+   
     const [formData,setFormData]=useState({
         email:'',
-        password:''
+        password:'',
+        password2:''
     })
 
-    const {email,password}=formData;
+    const {email,password,password2}=formData;
 
     const onChange=e =>setFormData({...formData,[e.target.name]:e.target.value});
     
@@ -24,7 +25,7 @@ const Login = () => {
            
         <form>
                 <span className="text-center">login</span>
-                <img src={starWarsLogo} className="log-img" alt="Star wars logo "></img>   
+                <img src={starWarsLogo} className="reg-img" alt="Star wars logo "></img>   
             <div className="input-container">
                 <input type="email"  name='email' value={email} onChange={e => onChange(e)} required/>
                 <label className={email.length > 0 ? 'inputactive':''}>Email Address</label>		
@@ -32,14 +33,19 @@ const Login = () => {
             <div className="input-container">		
                 <input type="password" name='password' value={password} onChange={e => onChange(e)} required/>
                 <label className={password.length > 0 ?'inputactive':''}>Password</label>
-           
             </div>
+
+            <div className="input-container">		
+                <input type="password" name='password2' value={password2} onChange={e => onChange(e)} required/>
+                <label className={password2.length > 0 ?'inputactive':''}>Confirm Password</label>
+            </div>
+            
                 <button type="sumbit" className="btn">submit</button>
         </form>	
-        <span> Don’t have an account?  <a className="">Sign Up </a></span>
+      
       </div>
         </div>
     )
 }
 
-export default Login
+export default Register;
