@@ -1,12 +1,14 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 
 import './App.scss';
+import starwarsLogo from './img/Star_Wars_Logo.svg';
 
-function App() {
+const App=()=> {
   return (
-    <div className="App">
+    <Fragment>
       <h1>react app ready</h1>
-    </div>
+      <img src={starwarsLogo}></img>
+    </Fragment>
   );
 }
 
