@@ -24,7 +24,7 @@ const Register = () => {
             <div className="box">
            
         <form>
-                <span className="text-center">login</span>
+                <span className="text-center">Register</span>
                 <img src={starWarsLogo} className="reg-img" alt="Star wars logo "></img>   
             <div className="input-container">
                 <input type="email"  name='email' value={email} onChange={e => onChange(e)} required/>
