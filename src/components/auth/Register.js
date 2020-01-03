@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import {Link} from 'react-router-dom';
 import starWarsLogo from '../../img/Star_Wars_Logo.svg'
 
 
@@ -45,7 +45,8 @@ const Register = () => {
                 <label className={password2.length > 0 ?'inputactive':''}>Confirm Password</label>
             </div>
             
-                <button type="sumbit" className="btn">submit</button>
+                <button type="sumbit" className="btn">Submit</button>
+                <Link to='/' className="btn back">Back</Link>
         </form>	
       
       </div>

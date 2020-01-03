@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 
+import {Link} from 'react-router-dom';
+
 import starWarsLogo from '../../img/Star_Wars_Logo.svg'
 
 const Login = () => {
@@ -36,7 +38,7 @@ const Login = () => {
             </div>
                 <button type="sumbit" className="btn">submit</button>
         </form>	
-        <span> Don’t have an account?  <a className="">Sign Up </a></span>
+        <span> Don’t have an account?  <Link to="/register" className="">Sign Up </Link></span>
       </div>
         </div>
     )
