@@ -5,7 +5,8 @@ import './App.scss';
 
 
 import Login from '../src/components/auth/Login';
-import Register from '../src/components/auth/Register'
+import Register from '../src/components/auth/Register';
+import Starwars from '../src/components/starwars/Starwars';
 
 //Redux
 
@@ -37,6 +38,7 @@ const App=()=> {
         <Route exact path='/' component={Login} />
           <Switch>
             <Route exact path='/register' component={Register} />
+            <Route exact path='/starwars' component={Starwars} />
           </Switch>
       </Router>
     </Fragment>

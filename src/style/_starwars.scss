@@ -1,0 +1,74 @@
+
+
+.starwars{
+
+    @include container(100%,100vh);
+    background-color: red;
+
+
+    .star-container{
+
+        img{
+            width: 100%;
+            height: 50%;
+           
+        }
+        z-index: 1;
+        button{
+            display:block;
+            position: relative;
+            left: 10%;
+            width: 71%;
+            height: 22%;
+            top:50px;
+            border-radius: 10px;
+            background-color:$primaryYellow;
+            font-weight: 900;
+            font-size: 25px;
+            outline: none;
+            cursor: pointer;
+            border: 2px solid $primaryYellow;
+            box-shadow: 0 0 5px 1px #fff;
+            
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $btnYellow;
+                border-radius: 10px;
+                top: 18px;
+                left: 0;
+                box-shadow: 0 0 5px 1px #fff;
+               z-index: -1;
+                
+                
+            }
+            
+            &:hover{
+                top:54px;
+
+                &::before{
+                    top: 14px;
+                }
+            }
+
+            &:focus{
+                top:64px;
+
+                &::before{
+                    top: 8px;
+                }
+            }
+
+            
+            
+
+        }
+
+
+    }
+
+
+
+}
