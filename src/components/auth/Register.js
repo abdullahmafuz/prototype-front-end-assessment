@@ -5,13 +5,17 @@ import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 import {connect} from 'react-redux';
 
 import {setAlert} from '../../action/alert';
+import {register} from '../../action/auth';
+
+
+
 
 import PropTypes from 'prop-types';
 
 import Alert from '../layout/Alert';
 
 
-const Register = ({setAlert}) => {
+const Register = ({setAlert ,register}) => {
    
     const [formData,setFormData]=useState({
         name:'',
@@ -40,7 +44,7 @@ const Register = ({setAlert}) => {
         if(password !== password2){
             setAlert(`password don't match`,'danger');
         }else{
-            console.log(formData)
+            register({name,email,password});
         }
     }
 
@@ -94,7 +98,8 @@ const Register = ({setAlert}) => {
 }
 
 Register.propTypes={
-    setAlert:PropTypes.func.isRequired
+    setAlert:PropTypes.func.isRequired,
+    register:PropTypes.func.isRequired
 }
 
-export default  connect(null,{setAlert})(Register);
+export default  connect(null,{setAlert,register})(Register);
