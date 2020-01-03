@@ -71,21 +71,21 @@ const Register = ({setAlert ,register}) => {
                 <span className="text-center">Register</span>
                 <img src={starWarsLogo} className="reg-img" alt="Star wars logo "></img>   
                 <div className="input-container">
-                <input type="text"  name="name" value={name} autoComplete="none"  onChange={e => onChange(e)} required/>
-                <label className={name.length > 0 ? 'inputactive':''}>Full Name</label>		
+                <input type="text"  name="name" value={name} autoComplete="none"  onChange={e => onChange(e)} id='r-name' required/>
+                <label className={name.length > 0 ? 'inputactive':''} htmlFor='r-name'>Full Name</label>		
             </div>
             <div className="input-container">
-                <input type="email"  name='email' value={email} autoComplete="off" onChange={e => onChange(e)} required/>
-                <label className={email.length > 0 ? 'inputactive':''}>Email Address</label>		
+                <input type="email"  name='email' value={email} autoComplete="off" onChange={e => onChange(e)} id='r-email' required/>
+                <label className={email.length > 0 ? 'inputactive':''} htmlFor='r-email'>Email Address</label>		
             </div>
             <div className="input-container">		
-                <input type={showpassword ? "text":"password"} name='password' value={password}  minLength="6" onChange={e => onChange(e)} required/>
-                <label className={password.length > 0 ?'inputactive':''}>Password</label><span><div onClick={e=>showPassword1(e)} className='eye'></div></span>
+                <input type={showpassword ? "text":"password"} name='password' value={password}  minLength="6" id='r-pass' onChange={e => onChange(e)} required/>
+                <label className={password.length > 0 ?'inputactive':''} htmlFor='r-pass'>Password</label><span><div onClick={e=>showPassword1(e)} className='eye'></div></span>
             </div>
 
             <div className="input-container">		
-                <input type={showpassword2 ? "text":"password"} name='password2' value={password2} onChange={e => onChange(e)} required/>
-                <label className={password2.length > 0 ?'inputactive':''}>Confirm Password</label><span><div onClick={e=>showPassword2(e)} className='eye'></div></span>
+                <input type={showpassword2 ? "text":"password"} name='password2' id='r-pass2' value={password2} onChange={e => onChange(e)} required/>
+                <label className={password2.length > 0 ?'inputactive':''} htmlFor='r-pass2'>Confirm Password</label><span><div onClick={e=>showPassword2(e)} className='eye'></div></span>
             </div>
             <Alert />
                 <button type="sumbit" className="btn">Submit</button>

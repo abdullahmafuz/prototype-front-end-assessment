@@ -2,9 +2,17 @@ import React,{useState} from 'react'
 
 import {Link} from 'react-router-dom';
 
-import starWarsLogo from '../../img/Star_Wars_Logo.svg'
+import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 
-const Login = () => {
+import {connect} from 'react-redux';
+
+import PropTypes from 'prop-types';
+
+import {login} from '../../action/auth';
+
+import Alert from '../layout/Alert';
+
+const Login = ({login}) => {
 
 
     const [formData,setFormData]=useState({
@@ -28,7 +36,7 @@ const Login = () => {
     const onSubmit=(e)=>{
         e.preventDefault();
 
-            console.log(formData)
+           login({email,password});
 
     }
 
@@ -52,13 +60,14 @@ const Login = () => {
                 <span className="text-center">login</span>
                 <img src={starWarsLogo} className="log-img" alt="Star wars logo "></img>   
             <div className="input-container">
-                <input type="email"  name='email' value={email} autoComplete="off" onChange={e => onChange(e)}  required/>
-                <label className={email.length > 0 ? 'inputactive':''}>Email Address</label>		
+                <input type="email"  name='email' value={email} autoComplete="off" onChange={e => onChange(e)} id='l-email' required/>
+                <label className={email.length > 0 ? 'inputactive':''} htmlFor="l-email">Email Address</label>		
             </div>
             <div className="input-container">		
-                <input type={showpassword ? "text":"password"} name='password' value={password}  minLength="6" onChange={e => onChange(e)} required/>
-                <label className={password.length > 0 ?'inputactive':''}>Password</label><span><div onClick={e=>showPassword1(e)} className='eye'></div></span>
+                <input type={showpassword ? "text":"password"} name='password' value={password}  minLength="6" onChange={e => onChange(e)} id='l-pass' required/>
+                <label className={password.length > 0 ?'inputactive':''} htmlFor='l-pass'>Password</label><span><div onClick={e=>showPassword1(e)} className='eye'></div></span>
             </div>
+            <Alert />
                 <button type="sumbit" className="btn">submit</button>
         </form>	
         <span> Don’t have an account?  <Link to="/register" className="">Sign Up </Link></span>
@@ -67,4 +76,10 @@ const Login = () => {
     )
 }
 
-export default Login
+
+Login.propTypes = {
+    
+    login:PropTypes.func.isRequired
+}
+
+export default connect(null,{login})(Login);
