@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 
 import {connect} from 'react-redux';
@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
 import Alert from '../layout/Alert';
 
 
-const Register = ({setAlert ,register}) => {
+const Register = ({setAlert ,register,isAuth}) => {
    
     const [formData,setFormData]=useState({
         name:'',
@@ -60,6 +60,15 @@ const Register = ({setAlert ,register}) => {
      
 
     }
+
+
+    
+  // redirect if user is authenticated
+  
+  if(isAuth){
+    return <Redirect to='/starwars' />
+}
+ 
    
 
     return (
@@ -99,7 +108,13 @@ const Register = ({setAlert ,register}) => {
 
 Register.propTypes={
     setAlert:PropTypes.func.isRequired,
-    register:PropTypes.func.isRequired
+    register:PropTypes.func.isRequired,
+    isAuth:PropTypes.bool
 }
 
-export default  connect(null,{setAlert,register})(Register);
+const mapStateToProps=state =>({
+    isAuth:state.auth.isAuth
+})
+
+
+export default  connect(mapStateToProps,{setAlert,register})(Register);

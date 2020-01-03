@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 
 import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 
@@ -12,7 +12,7 @@ import {login} from '../../action/auth';
 
 import Alert from '../layout/Alert';
 
-const Login = ({login}) => {
+const Login = ({login,isAuth}) => {
 
 
     const [formData,setFormData]=useState({
@@ -49,6 +49,11 @@ const Login = ({login}) => {
 
     }
 
+  // redirect if user is authenticated
+  
+  if(isAuth){
+      return <Redirect to='/starwars' />
+  }
    
 
     return (
@@ -79,7 +84,12 @@ const Login = ({login}) => {
 
 Login.propTypes = {
     
-    login:PropTypes.func.isRequired
+    login:PropTypes.func.isRequired,
+    isAuth:PropTypes.bool
 }
 
-export default connect(null,{login})(Login);
+const mapStateToProps=state =>({
+    isAuth:state.auth.isAuth
+})
+
+export default connect(mapStateToProps,{login})(Login);
