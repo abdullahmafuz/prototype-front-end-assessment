@@ -12,11 +12,20 @@ const Register = () => {
         password2:''
     })
 
+    const [showPassword,setshowPassword]=useState({
+        showpassword:false,
+        showpassword2:false
+    })
+
     const {name,email,password,password2}=formData;
+    
+    const {showpassword,showpassword2}=showPassword;
+    
+
 
     const onChange=e =>setFormData({...formData,[e.target.name]:e.target.value});
     
-   
+ //On submit event handler to checking and send data to backend  
     const onSubmit=(e)=>{
         e.preventDefault();
 
@@ -27,6 +36,18 @@ const Register = () => {
         }
     }
 
+
+  // toggle function for password field
+    const showPassword1 =(e)=>{
+        setshowPassword({...showPassword,showpassword:!showpassword})
+       
+
+    }
+    const showPassword2 =(e)=>{
+        setshowPassword({...showPassword,showpassword2:!showpassword2})
+     
+
+    }
    
 
     return (
@@ -46,13 +67,13 @@ const Register = () => {
                 <label className={email.length > 0 ? 'inputactive':''}>Email Address</label>		
             </div>
             <div className="input-container">		
-                <input type="password" name='password' value={password}  minLength="6" onChange={e => onChange(e)} required/>
-                <label className={password.length > 0 ?'inputactive':''}>Password</label>
+                <input type={showpassword ? "text":"password"} name='password' value={password}  minLength="6" onChange={e => onChange(e)} required/>
+                <label className={password.length > 0 ?'inputactive':''}>Password</label><span><div onClick={e=>showPassword1(e)} className='eye'></div></span>
             </div>
 
             <div className="input-container">		
-                <input type="password" name='password2' value={password2} onChange={e => onChange(e)} required/>
-                <label className={password2.length > 0 ?'inputactive':''}>Confirm Password</label>
+                <input type={showpassword2 ? "text":"password"} name='password2' value={password2} onChange={e => onChange(e)} required/>
+                <label className={password2.length > 0 ?'inputactive':''}>Confirm Password</label><span><div onClick={e=>showPassword2(e)} className='eye'></div></span>
             </div>
             
                 <button type="sumbit" className="btn">Submit</button>
