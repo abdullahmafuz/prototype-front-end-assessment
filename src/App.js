@@ -7,9 +7,16 @@ import './App.scss';
 import Login from '../src/components/auth/Login';
 import Register from '../src/components/auth/Register'
 
+//Redux
+
+import {Provider} from 'react-redux';
+
+import store from './store'
+
 
 const App=()=> {
   return (
+    <Provider store={store}>
     <Fragment>
       <Router>
         <Route exact path='/' component={Login} />
@@ -18,6 +25,7 @@ const App=()=> {
           </Switch>
       </Router>
     </Fragment>
+    </Provider>
   );
 }
 
