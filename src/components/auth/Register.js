@@ -1,9 +1,12 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom';
-import starWarsLogo from '../../img/Star_Wars_Logo.svg'
+import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 
+import {connect} from 'react-redux';
 
-const Register = () => {
+import {setAlert} from '../../action/alert';
+
+const Register = ({setAlert}) => {
    
     const [formData,setFormData]=useState({
         name:'',
@@ -30,7 +33,7 @@ const Register = () => {
         e.preventDefault();
 
         if(password !== password2){
-            console.log(`password don't match`);
+            setAlert(`password don't match`,'danger');
         }else{
             console.log(formData)
         }
@@ -85,4 +88,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default  connect(null,{setAlert})(Register);
