@@ -16,7 +16,13 @@ const Login = () => {
 
     const onChange=e =>setFormData({...formData,[e.target.name]:e.target.value});
     
-   
+    const onSubmit=(e)=>{
+        e.preventDefault();
+
+        
+            console.log(formData)
+        
+    }
    
 
     return (
@@ -24,11 +30,11 @@ const Login = () => {
             
             <div className="box">
            
-        <form>
+        <form  onSubmit={e=>onSubmit(e)}>
                 <span className="text-center">login</span>
                 <img src={starWarsLogo} className="log-img" alt="Star wars logo "></img>   
             <div className="input-container">
-                <input type="email"  name='email' value={email} onChange={e => onChange(e)} required/>
+                <input type="email"  name='email' value={email} autoComplete="off" onChange={e => onChange(e)}  required/>
                 <label className={email.length > 0 ? 'inputactive':''}>Email Address</label>		
             </div>
             <div className="input-container">		
