@@ -10,7 +10,7 @@ import Register from '../src/components/auth/Register'
 const App=()=> {
   return (
     <Fragment>
-      <Login />
+      <Register />
     </Fragment>
   );
 }
