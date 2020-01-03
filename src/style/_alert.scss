@@ -1,0 +1,19 @@
+
+.alert{
+    
+    padding: 0.8rem;
+    margin: 1rem 0;
+    opacity: 0.9;
+    
+}
+
+
+.alert-danger{
+    background: rgba(192, 77, 77, 0.856);
+    color: $primaryYellow;
+}
+
+.alert-success{
+    background: rgba(89, 199, 117, 0.856);
+    color: $primaryYellow;
+}

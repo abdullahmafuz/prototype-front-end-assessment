@@ -6,6 +6,11 @@ import {connect} from 'react-redux';
 
 import {setAlert} from '../../action/alert';
 
+import PropTypes from 'prop-types';
+
+import Alert from '../layout/Alert';
+
+
 const Register = ({setAlert}) => {
    
     const [formData,setFormData]=useState({
@@ -78,7 +83,7 @@ const Register = ({setAlert}) => {
                 <input type={showpassword2 ? "text":"password"} name='password2' value={password2} onChange={e => onChange(e)} required/>
                 <label className={password2.length > 0 ?'inputactive':''}>Confirm Password</label><span><div onClick={e=>showPassword2(e)} className='eye'></div></span>
             </div>
-            
+            <Alert />
                 <button type="sumbit" className="btn">Submit</button>
                 <Link to='/' className="btn back">Back</Link>
         </form>	
@@ -86,6 +91,10 @@ const Register = ({setAlert}) => {
       </div>
         </div>
     )
+}
+
+Register.propTypes={
+    setAlert:PropTypes.func.isRequired
 }
 
 export default  connect(null,{setAlert})(Register);
