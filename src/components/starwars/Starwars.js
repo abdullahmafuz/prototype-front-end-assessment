@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 
-import {Redirect} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 
 import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 
 import {connect} from 'react-redux';
 
+import {logout} from '../../action/auth';
 
 
 import Task1 from '../tasks/Task1';
@@ -13,19 +14,20 @@ import Task2 from '../tasks/Task2';
 import Task3 from '../tasks/Task3';
 import Task4 from '../tasks/Task4';
 
- const Starwars = ({isAuth}) => {
+ const Starwars = ({isAuth,logout}) => {
 
     const [onfetch,setOnfetch]=useState(false);
 
  
     if(!isAuth){
-      return  <Redirect to ='/' />
+      return  <Redirect to='/' />
     }
 
     return (
         <div className="starwars">
+            <Link onClick={e=>logout()} to='/' className="btn">Logout</Link>
             <div className="star-container">
-
+                
                 <img src={starWarsLogo} alt="starwars logo"></img>
                 <button onClick={e=>setOnfetch(!onfetch)}><span className="star"></span>Do. Or do not. There is no try. <span className="star"></span></button>
             
@@ -41,7 +43,8 @@ import Task4 from '../tasks/Task4';
 }
 
 const mapStateToProps=state =>({
-    isAuth:state.auth.isAuth
+    isAuth:state.auth.isAuth,
+
 })
 
-export default connect(mapStateToProps,{})(Starwars);
+export default connect(mapStateToProps,{logout})(Starwars);

@@ -17,4 +17,4 @@ export const TASK3_DATA_LOADED='TASK3_DATA_LOADED';
 export const TASK4_DATA_LOADED='TASK4_DATA_LOADED';
 export const TASK_FAIL='TASK_FAIL';
 
-
+export const LOGOUT='LOGOUT';
