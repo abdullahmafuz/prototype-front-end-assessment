@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 *{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 @import '../src/style/var';
@@ -11,4 +12,5 @@
 
 @import '../src/style/login';
 @import '../src/style/alert';
-@import '../src/style/starwars'
+@import '../src/style/starwars';
+@import '../src/style/task'

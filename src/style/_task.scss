@@ -1,0 +1,61 @@
+
+.task{
+    display: block;
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: -10%;
+    
+}
+.task:last-child{
+   
+    margin-bottom: 10%;
+    
+}
+
+h2{
+    margin-top: 40px;
+    color: #fff;
+}
+
+h3{
+    margin-top: 30px;
+    color: #fff;
+}
+
+.yellow{
+color: $primaryYellow;
+}
+
+
+@media only screen and (max-width: 900px) {
+
+
+    h2{
+        font-size: 1em;
+        
+    }
+    
+    h3{
+        font-size: 1em;
+        
+    }
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+
+    h2{
+        font-size: .8em;
+        
+    }
+    
+    h3{
+        font-size: .8em;
+        
+    }
+
+
+}
