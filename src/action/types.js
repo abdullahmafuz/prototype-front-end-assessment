@@ -8,6 +8,13 @@ export const USER_LOADED = 'USER_LOADED';
 export const AUTH_ERROR = 'AUTH_ERROR';
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-
 export const LOGIN_FAIL = 'LOGIN_FAIL';
+
+
+export const TASK1_DATA_LOADED='TASK1_DATA_LOADED';
+export const TASK2_DATA_LOADED='TASK2_DATA_LOADED';
+export const TASK3_DATA_LOADED='TASK3_DATA_LOADED';
+export const TASK4_DATA_LOADED='TASK4_DATA_LOADED';
+export const TASK_FAIL='TASK_FAIL';
+
 

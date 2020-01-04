@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 
 import {connect} from 'react-redux';
 
-import {task1} from '../../action/task';
+import {task2} from '../../action/task';
 
 
 
-const Task1 = ({fetch,task1,task }) => {
+const Task2 = ({fetch }) => {
 
     useEffect(()=>{
-       task1();
-    },[]);
-    
+        task2();
+     },[task2]);
+     
     
 
     if(fetch){
@@ -35,12 +35,12 @@ const Task1 = ({fetch,task1,task }) => {
 }
 }
 
-Task1.propTypes = {
-    task1:PropTypes.func.isRequired
+Task2.propTypes = {
+
 }
 
 const mapStateToProps=state =>({
-    task:state.task.task1data
+    task:state.task.task2data
 })
 
-export default connect(mapStateToProps,{task1})(Task1);
+export default connect(mapStateToProps,{task2})(Task2);

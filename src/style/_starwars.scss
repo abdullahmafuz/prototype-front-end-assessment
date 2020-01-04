@@ -2,14 +2,7 @@
 
 .starwars{
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    margin: auto;
-    width: 100%;
-    
-    flex-direction: column;
+   @include container(100%,auto);
     .star-container{
 
         img{
@@ -154,7 +147,7 @@
                
                 height: 80px;
 
-                font-size: 15px;
+                font-size: 18px;
                
                     .star{
                         font-size: 15px;
