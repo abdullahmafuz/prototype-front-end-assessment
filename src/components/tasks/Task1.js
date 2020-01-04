@@ -11,7 +11,7 @@ const Task1 = ({fetch,task1,task }) => {
 
     useEffect(()=>{
        task1();
-    },[]);
+    },[task1]);
     
     
 
@@ -20,7 +20,7 @@ const Task1 = ({fetch,task1,task }) => {
         <div className="task">
     <h2>Which of all Star Wars movies has the longest opening crawl ?</h2>
     <center>
-    <h3 className="yellow">RETURN OF THE JADi</h3>
+    <h3 className="yellow">{task}</h3>
     </center>
         
         </div>

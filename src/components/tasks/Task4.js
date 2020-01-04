@@ -7,21 +7,27 @@ import {task4} from '../../action/task';
 
 
 
-const Task4 = ({fetch }) => {
+const Task4 = ({fetch,task4 ,task}) => {
 
     
     useEffect(()=>{
         task4();
-     },[]);
+     },[task4]);
      
+   
+
+    
+
     
 
     if(fetch){
     return (
         <div className="task">
-    <h2>Which of all Star Wars movies has the longest opening crawl ?</h2>
+    <h2>What planet in Star Wars universe provided largest number of vehicle pilots?</h2>
     <center>
-    <h3 className="yellow">RETURN OF THE JADi</h3>
+    {
+    task && task.map(data => <h3 key={data.peopleName} className="yellow">Planet: {data.planetName} - Pilot: {data.peopleName} - {data.speciesName}</h3>)
+    }
     </center>
         
         </div>
@@ -37,7 +43,7 @@ const Task4 = ({fetch }) => {
 }
 
 Task4.propTypes = {
-
+    task4:PropTypes.func.isRequired
 }
 
 const mapStateToProps=state =>({

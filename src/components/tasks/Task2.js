@@ -7,7 +7,7 @@ import {task2} from '../../action/task';
 
 
 
-const Task2 = ({fetch }) => {
+const Task2 = ({fetch,task2,task }) => {
 
     useEffect(()=>{
         task2();
@@ -18,9 +18,11 @@ const Task2 = ({fetch }) => {
     if(fetch){
     return (
         <div className="task">
-    <h2>Which of all Star Wars movies has the longest opening crawl ?</h2>
+    <h2>What character appeared in most of the Star Wars films?</h2>
     <center>
-    <h3 className="yellow">RETURN OF THE JADi</h3>
+        {
+    task && task.map(person =><h3 key={person} className="yellow">{person}</h3>)
+        }
     </center>
         
         </div>
@@ -36,7 +38,7 @@ const Task2 = ({fetch }) => {
 }
 
 Task2.propTypes = {
-
+    task2:PropTypes.func.isRequired
 }
 
 const mapStateToProps=state =>({

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-import {Link,Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import starWarsLogo from '../../img/Star_Wars_Logo.svg';
 
