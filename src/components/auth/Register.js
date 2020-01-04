@@ -69,6 +69,7 @@ const Register = ({setAlert ,register,isAuth}) => {
     return <Redirect to='/starwars' />
 }
  
+
    
 
     return (
