@@ -1,12 +1,45 @@
 
-# prototype-assessment (frontend website written in ReactJS)
+#### prototype-assessment (frontend website code in ReactJS)
 
 
-## Available Scripts
+# StarWar App
+
+**App** has registration and login function  and Get starwars information from backend API
+
+if your first time user , you have to make account to access starwar page.
+
+
+### Pages
+1. Login
+1. Register
+1. Starwars
+2. NotFoundPage
+
+> Starwar page is Privated Route , so you can acces this page only if you have account.
+
+
+
+
+### Available Scripts
 
 In the project directory, you can run:
 
+### Installation
+<!-- Code Blocks -->
+```bash
+  npm install
+
+  npm start
+
+  npm test
+
+  npm run build
+``` 
+
+###You need to run `npm install` to install all its dependencies
+ 
 ### `npm start`
+
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -27,9 +60,13 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+its  [Backend repository](https://github.com/abdullahmafuz/prototype-back-end-assessment)
 
 
-### `npm run build` fails to minify
+>You can contact me through email or phone call
+<!-- Tables -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+| Email | abdullahmafuz1@gmail.com |
+| Mobile no | 971567729088 |
