@@ -16,6 +16,7 @@ import store from './store';
 
 import {loadUser} from '../src/action/auth';
 import {setAuthToken} from '../src/utils/setAuthToken';
+import PageNotFound from '../src/components/pages/PageNotFound';
 
 
 if(localStorage.token){
@@ -35,10 +36,12 @@ const App=()=> {
     <Provider store={store}>
     <Fragment>
       <Router>
-        <Route exact path='/' component={Login} />
+        
           <Switch>
+          <Route exact path='/' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/starwars' component={Starwars} />
+            <Route component={PageNotFound} />
           </Switch>
       </Router>
     </Fragment>
