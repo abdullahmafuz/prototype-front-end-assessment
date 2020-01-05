@@ -51,7 +51,7 @@ export const register = ({name,email,password})=> async dispatch =>{
 
     try{
 
-        const  res= await axios.post(`${webapi}/api/users',body,config`);
+        const  res= await axios.post(`${webapi}/api/users`,body,config);
 
         dispatch({
             type:REGISTER_SUCCESS,
@@ -93,7 +93,7 @@ export const login = ({email,password})=> async dispatch =>{
 
     try{
 
-        const  res= await axios.post(`${webapi}/api/auth',body,config`);
+        const  res= await axios.post(`${webapi}/api/auth`,body,config);
 
         dispatch({
             type:LOGIN_SUCCESS,
