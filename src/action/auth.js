@@ -8,6 +8,8 @@ import {setAuthToken} from '../utils/setAuthToken'
 
 
 
+const webapi='https://starwar-backend-api.herokuapp.com';
+
 // check for user => load user
 
 export const loadUser=()=> async dispatch =>{
@@ -18,7 +20,7 @@ export const loadUser=()=> async dispatch =>{
 
     try{
 
-        const res=await axios.get('/api/auth');
+        const res=await axios.get(`${webapi}/api/auth`);
 
         dispatch({
             type:USER_LOADED,
@@ -49,7 +51,7 @@ export const register = ({name,email,password})=> async dispatch =>{
 
     try{
 
-        const  res= await axios.post('/api/users',body,config);
+        const  res= await axios.post(`${webapi}/api/users',body,config`);
 
         dispatch({
             type:REGISTER_SUCCESS,
@@ -91,7 +93,7 @@ export const login = ({email,password})=> async dispatch =>{
 
     try{
 
-        const  res= await axios.post('/api/auth',body,config);
+        const  res= await axios.post(`${webapi}/api/auth',body,config`);
 
         dispatch({
             type:LOGIN_SUCCESS,
